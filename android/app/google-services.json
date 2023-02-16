@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "334239902633",
+    "firebase_url": "https://soj-gym-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "soj-gym",
+    "storage_bucket": "soj-gym.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334239902633:android:714decf5e88300f89f32b8",
+        "android_client_info": {
+          "package_name": "com.example.gym_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334239902633-sttnkcbkhni6m6hrmf63v2pvhg1qh4ci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAGZAKZGQBsyrpY07EYhrfYWWXJM8rQLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334239902633-sttnkcbkhni6m6hrmf63v2pvhg1qh4ci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334239902633:android:589661a8a272617e9f32b8",
+        "android_client_info": {
+          "package_name": "medk.bjj.management.bjj_members_management"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334239902633-sttnkcbkhni6m6hrmf63v2pvhg1qh4ci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAGZAKZGQBsyrpY07EYhrfYWWXJM8rQLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334239902633-sttnkcbkhni6m6hrmf63v2pvhg1qh4ci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
