@@ -9,7 +9,6 @@ class Routes {
   static const String signUpAdmin = 'signup-admin';
   static const String signUpMember = 'signup-member';
 
-
   static const String login_signUp = '/login/signup';
 
   static const String signUpSuccess = 'signup-success';
@@ -18,7 +17,7 @@ class Routes {
   static const String resetOldCode = 'reset-pincode';
 
   static const String home = '/home';
-  static const String profile = 'profile';
+  static const String profile = '/profile';
   static const String memberDetails = 'member-details';
   static const String memberOverview = 'member-overview';
   static const String payment = 'payment';
@@ -64,12 +63,17 @@ class Routes {
       GoRoute(
         name: Routes.home,
         path: Routes.home,
-        pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: HomePage()),
+        pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const HomePage()),
         routes: [
           GoRoute(
             name: Routes.memberDetails,
             path: Routes.memberDetails,
             pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const MemberDetailsPage()),
+          ),
+          GoRoute(
+            name: Routes.profile,
+            path: Routes.profile,
+            pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const ProfileScreen()),
           ),
         ],
       ),

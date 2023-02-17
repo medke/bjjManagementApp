@@ -1,16 +1,11 @@
 part of payement;
-class PaymentsPage extends StatefulWidget {
-  @override
-  _PaymentsPageState createState() => _PaymentsPageState();
-}
 
-class _PaymentsPageState extends State<PaymentsPage> {
+class PaymentsPage extends StatelessWidget {
+  const PaymentsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Payments'),
-      ),
       body: ListView(
         children: <Widget>[
           ListTile(
@@ -52,12 +47,9 @@ class _PaymentsPageState extends State<PaymentsPage> {
   }
 }
 
-class PaymentDetailsPage extends StatefulWidget {
-  @override
-  _PaymentDetailsPageState createState() => _PaymentDetailsPageState();
-}
+class PaymentDetailsPage extends StatelessWidget {
+  const PaymentDetailsPage({super.key});
 
-class _PaymentDetailsPageState extends State<PaymentDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
