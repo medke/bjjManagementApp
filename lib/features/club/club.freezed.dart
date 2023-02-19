@@ -20,13 +20,14 @@ Club _$ClubFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Club {
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String? get logo => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
+  String get adminId => throw _privateConstructorUsedError;
   List<TrainingSession>? get trainingSessions =>
       throw _privateConstructorUsedError;
-  List<Member>? get members => throw _privateConstructorUsedError;
+  List<String>? get members => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,12 +40,13 @@ abstract class $ClubCopyWith<$Res> {
       _$ClubCopyWithImpl<$Res, Club>;
   @useResult
   $Res call(
-      {String? id,
-      String? name,
+      {String id,
+      String name,
       String? logo,
       String? address,
+      String adminId,
       List<TrainingSession>? trainingSessions,
-      List<Member>? members});
+      List<String>? members});
 }
 
 /// @nodoc
@@ -60,22 +62,23 @@ class _$ClubCopyWithImpl<$Res, $Val extends Club>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? logo = freezed,
     Object? address = freezed,
+    Object? adminId = null,
     Object? trainingSessions = freezed,
     Object? members = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       logo: freezed == logo
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
@@ -84,6 +87,10 @@ class _$ClubCopyWithImpl<$Res, $Val extends Club>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
+      adminId: null == adminId
+          ? _value.adminId
+          : adminId // ignore: cast_nullable_to_non_nullable
+              as String,
       trainingSessions: freezed == trainingSessions
           ? _value.trainingSessions
           : trainingSessions // ignore: cast_nullable_to_non_nullable
@@ -91,7 +98,7 @@ class _$ClubCopyWithImpl<$Res, $Val extends Club>
       members: freezed == members
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<Member>?,
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -103,12 +110,13 @@ abstract class _$$_ClubCopyWith<$Res> implements $ClubCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? id,
-      String? name,
+      {String id,
+      String name,
       String? logo,
       String? address,
+      String adminId,
       List<TrainingSession>? trainingSessions,
-      List<Member>? members});
+      List<String>? members});
 }
 
 /// @nodoc
@@ -120,22 +128,23 @@ class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? logo = freezed,
     Object? address = freezed,
+    Object? adminId = null,
     Object? trainingSessions = freezed,
     Object? members = freezed,
   }) {
     return _then(_$_Club(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       logo: freezed == logo
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
@@ -144,6 +153,10 @@ class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
+      adminId: null == adminId
+          ? _value.adminId
+          : adminId // ignore: cast_nullable_to_non_nullable
+              as String,
       trainingSessions: freezed == trainingSessions
           ? _value._trainingSessions
           : trainingSessions // ignore: cast_nullable_to_non_nullable
@@ -151,34 +164,38 @@ class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
       members: freezed == members
           ? _value._members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<Member>?,
+              as List<String>?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_Club implements _Club {
   const _$_Club(
-      {this.id,
-      this.name,
+      {required this.id,
+      required this.name,
       this.logo,
       this.address,
+      required this.adminId,
       final List<TrainingSession>? trainingSessions,
-      final List<Member>? members})
+      final List<String>? members})
       : _trainingSessions = trainingSessions,
         _members = members;
 
   factory _$_Club.fromJson(Map<String, dynamic> json) => _$$_ClubFromJson(json);
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
   final String? logo;
   @override
   final String? address;
+  @override
+  final String adminId;
   final List<TrainingSession>? _trainingSessions;
   @override
   List<TrainingSession>? get trainingSessions {
@@ -190,9 +207,9 @@ class _$_Club implements _Club {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<Member>? _members;
+  final List<String>? _members;
   @override
-  List<Member>? get members {
+  List<String>? get members {
     final value = _members;
     if (value == null) return null;
     if (_members is EqualUnmodifiableListView) return _members;
@@ -202,7 +219,7 @@ class _$_Club implements _Club {
 
   @override
   String toString() {
-    return 'Club(id: $id, name: $name, logo: $logo, address: $address, trainingSessions: $trainingSessions, members: $members)';
+    return 'Club(id: $id, name: $name, logo: $logo, address: $address, adminId: $adminId, trainingSessions: $trainingSessions, members: $members)';
   }
 
   @override
@@ -214,6 +231,7 @@ class _$_Club implements _Club {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.logo, logo) || other.logo == logo) &&
             (identical(other.address, address) || other.address == address) &&
+            (identical(other.adminId, adminId) || other.adminId == adminId) &&
             const DeepCollectionEquality()
                 .equals(other._trainingSessions, _trainingSessions) &&
             const DeepCollectionEquality().equals(other._members, _members));
@@ -227,6 +245,7 @@ class _$_Club implements _Club {
       name,
       logo,
       address,
+      adminId,
       const DeepCollectionEquality().hash(_trainingSessions),
       const DeepCollectionEquality().hash(_members));
 
@@ -246,27 +265,30 @@ class _$_Club implements _Club {
 
 abstract class _Club implements Club {
   const factory _Club(
-      {final String? id,
-      final String? name,
+      {required final String id,
+      required final String name,
       final String? logo,
       final String? address,
+      required final String adminId,
       final List<TrainingSession>? trainingSessions,
-      final List<Member>? members}) = _$_Club;
+      final List<String>? members}) = _$_Club;
 
   factory _Club.fromJson(Map<String, dynamic> json) = _$_Club.fromJson;
 
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
   String? get logo;
   @override
   String? get address;
   @override
+  String get adminId;
+  @override
   List<TrainingSession>? get trainingSessions;
   @override
-  List<Member>? get members;
+  List<String>? get members;
   @override
   @JsonKey(ignore: true)
   _$$_ClubCopyWith<_$_Club> get copyWith => throw _privateConstructorUsedError;

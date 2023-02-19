@@ -52,6 +52,7 @@ dependencies:
   injectable: ^2.1.0
   flutter_secure_storage: ^8.0.0
   form_builder_image_picker: ^3.1.0
+  uuid: ^3.0.7
 
 dev_dependencies:
   build_runner: ^2.3.3
@@ -80,3 +81,10 @@ flutter:
     - assets/
     - assets/images/
     - assets/images/logo.svg
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          any_map: true
+          explicit_to_json: true

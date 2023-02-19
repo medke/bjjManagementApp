@@ -9,8 +9,8 @@ part of members;
 _$_Member _$$_MemberFromJson(Map<String, dynamic> json) => _$_Member(
       id: json['id'] as String?,
       name: json['name'] as String?,
+      clubId: json['clubId'] as String?,
       isAdmin: json['isAdmin'] as bool?,
-      hasClub: json['hasClub'] as bool? ?? false,
       password: json['password'] as String?,
       membershipStartDate: json['membershipStartDate'] == null
           ? null
@@ -36,8 +36,8 @@ _$_Member _$$_MemberFromJson(Map<String, dynamic> json) => _$_Member(
 Map<String, dynamic> _$$_MemberToJson(_$_Member instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'clubId': instance.clubId,
       'isAdmin': instance.isAdmin,
-      'hasClub': instance.hasClub,
       'password': instance.password,
       'membershipStartDate': instance.membershipStartDate?.toIso8601String(),
       'membershipEndDate': instance.membershipEndDate?.toIso8601String(),

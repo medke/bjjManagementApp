@@ -16,4 +16,8 @@ class LoginSuccess extends LoginState {
   const LoginSuccess.fromState({Member? member}) : super(member: member);
 }
 
+class MemberUpdate extends LoginState {
+  const MemberUpdate.fromState({Member? member}) : super(member: member);
+}
+
 class LoginFailure extends LoginState {}

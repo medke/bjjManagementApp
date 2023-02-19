@@ -28,7 +28,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     if (member != null) {
       if (member.isAdmin == null) {
         context.goNamed(Routes.roleSelection);
-      } else if (member.isAdmin == true && !member.hasClub) {
+      } else if (member.isAdmin == true && member.clubId == null) {
         context.goNamed(Routes.adminsComplete);
       } else {
         context.goNamed(Routes.home);

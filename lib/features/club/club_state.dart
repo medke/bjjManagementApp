@@ -11,19 +11,19 @@ class ClubLoading extends ClubState {
   List<Object> get props => [];
 }
 
-class ClubLoaded extends ClubState {
+class ClubCreatedSuccess extends ClubState {
   final Club club;
 
-  const ClubLoaded(this.club);
+  const ClubCreatedSuccess(this.club);
 
   @override
   List<Object> get props => [club];
 }
 
-class ClubError extends ClubState {
+class ClubCreatedError extends ClubState {
   final String error;
 
-  const ClubError(this.error);
+  const ClubCreatedError(this.error);
 
   @override
   List<Object> get props => [error];
