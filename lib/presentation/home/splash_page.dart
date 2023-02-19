@@ -1,4 +1,5 @@
 part of home_page;
+
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
 
@@ -10,10 +11,31 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-    // Schedule a delayed navigation to the '/login' route
-    Future.delayed(const Duration(seconds: 5), () {
-      context.go('/login');
-    });
+    Future.delayed(
+      const Duration(seconds: 1),
+      () {
+        getIt<LoginCubit>().checkUserLoggedIn().whenComplete(
+          () {
+            final member = getIt<LoginCubit>().state.member;
+            navigateToNextScreen(context, member);
+          },
+        );
+      },
+    );
+  }
+
+  void navigateToNextScreen(BuildContext context, Member? member) {
+    if (member != null) {
+      if (member.isAdmin == null) {
+        context.goNamed(Routes.roleSelection);
+      } else if (member.isAdmin == true && !member.hasClub) {
+        context.goNamed(Routes.adminsComplete);
+      } else {
+        context.goNamed(Routes.home);
+      }
+    } else {
+      context.goNamed(Routes.login);
+    }
   }
 
   @override

@@ -7,15 +7,15 @@ part of club;
 // **************************************************************************
 
 _$_Club _$$_ClubFromJson(Map<String, dynamic> json) => _$_Club(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      logo: json['logo'] as String? ?? '',
-      address: json['address'] as String,
-      trainingSessions: (json['trainingSessions'] as List<dynamic>)
-          .map((e) => TrainingSession.fromJson(e as Map<String, dynamic>))
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      logo: json['logo'] as String?,
+      address: json['address'] as String?,
+      trainingSessions: (json['trainingSessions'] as List<dynamic>?)
+          ?.map((e) => TrainingSession.fromJson(e as Map<String, dynamic>))
           .toList(),
-      members: (json['members'] as List<dynamic>)
-          .map((e) => Member.fromJson(e as Map<String, dynamic>))
+      members: (json['members'] as List<dynamic>?)
+          ?.map((e) => Member.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

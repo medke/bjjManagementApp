@@ -1,5 +1,6 @@
 part of club;
 
+@LazySingleton()
 class ClubCubit extends Cubit<ClubState> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 

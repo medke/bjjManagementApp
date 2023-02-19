@@ -1,5 +1,6 @@
 part of login;
 
+@LazySingleton()
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
 
@@ -14,11 +15,26 @@ class LoginCubit extends Cubit<LoginState> {
       });
     }
   }
+  Future<void> getUserFromCollection(String uid) async {
+    final memberRef = FirebaseFirestore.instance.collection('members').doc(uid);
+    final memberDoc = await memberRef.get();
+
+    if (memberDoc.exists) {
+      print(">>>> memberDoc ${memberDoc.data()}");
+      final member = Member(
+        id: uid,
+        email: memberDoc.data()!['email'],
+      );
+      emit(LoginSuccess.fromState(member: member));
+    } else {
+      emit(LoginFailure());
+    }
+  }
 
   Future<void> checkUserLoggedIn() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      emit(LoginSuccess.fromState(user: user));
+      await getUserFromCollection(user.uid);
     } else {
       emit(LoginFailure());
     }

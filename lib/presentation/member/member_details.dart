@@ -38,11 +38,7 @@ class _MemberDetailsPageState extends State<MemberDetailsPage> {
   @override
   Widget build(BuildContext context) {
     print(">>>> $belts");
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Member Details'),
-      ),
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: FormBuilder(
@@ -193,7 +189,6 @@ class _MemberDetailsPageState extends State<MemberDetailsPage> {
             ),
           ),
         ),
-      ),
     );
   }
 }

@@ -20,9 +20,10 @@ Member _$MemberFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Member {
-  int? get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   bool? get isAdmin => throw _privateConstructorUsedError;
+  bool get hasClub => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
   DateTime? get membershipStartDate => throw _privateConstructorUsedError;
   DateTime? get membershipEndDate => throw _privateConstructorUsedError;
@@ -45,9 +46,10 @@ abstract class $MemberCopyWith<$Res> {
       _$MemberCopyWithImpl<$Res, Member>;
   @useResult
   $Res call(
-      {int? id,
-      String name,
+      {String? id,
+      String? name,
       bool? isAdmin,
+      bool hasClub,
       String? password,
       DateTime? membershipStartDate,
       DateTime? membershipEndDate,
@@ -74,8 +76,9 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? name = freezed,
     Object? isAdmin = freezed,
+    Object? hasClub = null,
     Object? password = freezed,
     Object? membershipStartDate = freezed,
     Object? membershipEndDate = freezed,
@@ -91,15 +94,19 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isAdmin: freezed == isAdmin
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hasClub: null == hasClub
+          ? _value.hasClub
+          : hasClub // ignore: cast_nullable_to_non_nullable
+              as bool,
       password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -151,9 +158,10 @@ abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int? id,
-      String name,
+      {String? id,
+      String? name,
       bool? isAdmin,
+      bool hasClub,
       String? password,
       DateTime? membershipStartDate,
       DateTime? membershipEndDate,
@@ -177,8 +185,9 @@ class __$$_MemberCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? name = freezed,
     Object? isAdmin = freezed,
+    Object? hasClub = null,
     Object? password = freezed,
     Object? membershipStartDate = freezed,
     Object? membershipEndDate = freezed,
@@ -194,15 +203,19 @@ class __$$_MemberCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isAdmin: freezed == isAdmin
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hasClub: null == hasClub
+          ? _value.hasClub
+          : hasClub // ignore: cast_nullable_to_non_nullable
+              as bool,
       password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -249,11 +262,12 @@ class __$$_MemberCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Member implements _Member {
+class _$_Member extends _Member {
   const _$_Member(
       {this.id,
-      required this.name,
+      this.name,
       this.isAdmin,
+      this.hasClub = false,
       this.password,
       this.membershipStartDate,
       this.membershipEndDate,
@@ -263,17 +277,21 @@ class _$_Member implements _Member {
       this.lastPaymentDate,
       this.ageGroup,
       this.phoneNumber,
-      required this.email});
+      required this.email})
+      : super._();
 
   factory _$_Member.fromJson(Map<String, dynamic> json) =>
       _$$_MemberFromJson(json);
 
   @override
-  final int? id;
+  final String? id;
   @override
-  final String name;
+  final String? name;
   @override
   final bool? isAdmin;
+  @override
+  @JsonKey()
+  final bool hasClub;
   @override
   final String? password;
   @override
@@ -297,7 +315,7 @@ class _$_Member implements _Member {
 
   @override
   String toString() {
-    return 'Member(id: $id, name: $name, isAdmin: $isAdmin, password: $password, membershipStartDate: $membershipStartDate, membershipEndDate: $membershipEndDate, membershipType: $membershipType, bjjBelt: $bjjBelt, beltObtainedDate: $beltObtainedDate, lastPaymentDate: $lastPaymentDate, ageGroup: $ageGroup, phoneNumber: $phoneNumber, email: $email)';
+    return 'Member(id: $id, name: $name, isAdmin: $isAdmin, hasClub: $hasClub, password: $password, membershipStartDate: $membershipStartDate, membershipEndDate: $membershipEndDate, membershipType: $membershipType, bjjBelt: $bjjBelt, beltObtainedDate: $beltObtainedDate, lastPaymentDate: $lastPaymentDate, ageGroup: $ageGroup, phoneNumber: $phoneNumber, email: $email)';
   }
 
   @override
@@ -308,6 +326,7 @@ class _$_Member implements _Member {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin) &&
+            (identical(other.hasClub, hasClub) || other.hasClub == hasClub) &&
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.membershipStartDate, membershipStartDate) ||
@@ -335,6 +354,7 @@ class _$_Member implements _Member {
       id,
       name,
       isAdmin,
+      hasClub,
       password,
       membershipStartDate,
       membershipEndDate,
@@ -360,11 +380,12 @@ class _$_Member implements _Member {
   }
 }
 
-abstract class _Member implements Member {
+abstract class _Member extends Member {
   const factory _Member(
-      {final int? id,
-      required final String name,
+      {final String? id,
+      final String? name,
       final bool? isAdmin,
+      final bool hasClub,
       final String? password,
       final DateTime? membershipStartDate,
       final DateTime? membershipEndDate,
@@ -375,15 +396,18 @@ abstract class _Member implements Member {
       final String? ageGroup,
       final DateTime? phoneNumber,
       required final String email}) = _$_Member;
+  const _Member._() : super._();
 
   factory _Member.fromJson(Map<String, dynamic> json) = _$_Member.fromJson;
 
   @override
-  int? get id;
+  String? get id;
   @override
-  String get name;
+  String? get name;
   @override
   bool? get isAdmin;
+  @override
+  bool get hasClub;
   @override
   String? get password;
   @override

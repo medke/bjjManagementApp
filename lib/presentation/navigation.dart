@@ -12,19 +12,21 @@ class Routes {
   static const String login_signUp = '/login/signup';
 
   static const String signUpSuccess = 'signup-success';
-  static const String profileComplete = 'profile-complete';
   static const String resendPinCode = 'resend-pincode';
   static const String resetOldCode = 'reset-pincode';
 
   static const String home = '/home';
-  static const String profile = '/profile';
+  static const String profile = 'profile';
   static const String memberDetails = 'member-details';
   static const String memberOverview = 'member-overview';
   static const String payment = 'payment';
   static const String paymentDetails = 'payment-details';
   static const String session = 'session';
   static const String sessionDetails = 'session-details';
-  static const String roleSelection = 'role-selection';
+
+  static const String roleSelection = '/role-selection';
+  static const String adminsComplete = 'admin-complete';
+  static const String membersComplete = 'members-complete';
 
   static final router = GoRouter(
     routes: [
@@ -48,15 +50,22 @@ class Routes {
             path: Routes.signUpMember,
             pageBuilder: (context, state) => const MaterialPage(child: MemberSignupPage()),
           ),
+        ],
+      ),
+      GoRoute(
+        name: Routes.roleSelection,
+        path: Routes.roleSelection,
+        pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const RoleSelectionPage()),
+        routes: [
           GoRoute(
-            name: Routes.signUpSuccess,
-            path: Routes.signUpSuccess,
-            pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const SignUpSuccessPage()),
+            name: Routes.adminsComplete,
+            path: Routes.adminsComplete,
+            pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: ClubCreatePage()),
           ),
           GoRoute(
-            name: Routes.profileComplete,
-            path: Routes.profileComplete,
-            pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const CompleteProfilePage()),
+            name: Routes.membersComplete,
+            path: Routes.membersComplete,
+            pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: MemberConfirmation()),
           ),
         ],
       ),
@@ -73,7 +82,10 @@ class Routes {
           GoRoute(
             name: Routes.profile,
             path: Routes.profile,
-            pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const ProfileScreen()),
+            pageBuilder: (context, state) => MaterialPage(
+              key: state.pageKey,
+              child: const ProfilePage(),
+            ),
           ),
         ],
       ),
