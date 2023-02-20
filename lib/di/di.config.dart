@@ -5,7 +5,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:bjj_members_management/di/di_module.dart' as _i8;
+import 'package:bjj_members_management/data/mappers/mapper.dart' as _i8;
+import 'package:bjj_members_management/di/di_module.dart' as _i9;
 import 'package:bjj_members_management/features/classes/classes_cubit.dart'
     as _i3;
 import 'package:bjj_members_management/features/club/club.dart' as _i4;
@@ -35,8 +36,9 @@ extension GetItInjectableX on _i1.GetIt {
         () => injectorModule.flutterSecureStorage);
     gh.lazySingleton<_i6.LoginCubit>(() => _i6.LoginCubit());
     gh.lazySingleton<_i7.MemberCubit>(() => _i7.MemberCubit());
+    gh.lazySingleton<_i8.MemberMapper>(() => _i8.MemberMapper());
     return this;
   }
 }
 
-class _$InjectorModule extends _i8.InjectorModule {}
+class _$InjectorModule extends _i9.InjectorModule {}

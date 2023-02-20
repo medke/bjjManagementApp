@@ -36,23 +36,23 @@ class LoginCubit extends Cubit<LoginState> {
     final memberDoc = await memberRef.get();
 
     if (memberDoc.exists) {
-      print(">>>> memberDoc ${memberDoc.data()}");
-      final member = Member(
-        id: uid,
-        email: memberDoc.data()!['email'],
-      );
+      final member = getIt<MemberMapper>().fromEntity(memberDoc.data()!);
       emit(LoginSuccess.fromState(member: member));
     } else {
-      emit(LoginFailure());
+      emit(const LoginFailure(error: "Member does not exist"));
     }
   }
 
   Future<void> checkUserLoggedIn() async {
     final user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      await getUserFromCollection(user.uid);
-    } else {
-      emit(LoginFailure());
+    try {
+      if (user != null) {
+        await getUserFromCollection(user.uid);
+      } else {
+        emit(RedirectToLogin());
+      }
+    } catch (e) {
+      emit(LoginFailure(error: e.toString()));
     }
   }
 }
