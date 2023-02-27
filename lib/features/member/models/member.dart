@@ -1,4 +1,4 @@
-part of members;
+part of member;
 
 @freezed
 class Member with _$Member {
@@ -8,6 +8,7 @@ class Member with _$Member {
     String? clubId,
     bool? isAdmin,
     String? password,
+    String? code,
     DateTime? membershipStartDate,
     DateTime? membershipEndDate,
     String? membershipType,
@@ -16,6 +17,7 @@ class Member with _$Member {
     DateTime? lastPaymentDate,
     String? ageGroup,
     DateTime? phoneNumber,
+    String? paymentMethod,
     required String email,
   }) = _Member;
 

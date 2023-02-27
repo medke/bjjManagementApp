@@ -27,7 +27,6 @@ mixin _$Club {
   String get adminId => throw _privateConstructorUsedError;
   List<TrainingSession>? get trainingSessions =>
       throw _privateConstructorUsedError;
-  List<String>? get members => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,8 +44,7 @@ abstract class $ClubCopyWith<$Res> {
       String? logo,
       String? address,
       String adminId,
-      List<TrainingSession>? trainingSessions,
-      List<String>? members});
+      List<TrainingSession>? trainingSessions});
 }
 
 /// @nodoc
@@ -68,7 +66,6 @@ class _$ClubCopyWithImpl<$Res, $Val extends Club>
     Object? address = freezed,
     Object? adminId = null,
     Object? trainingSessions = freezed,
-    Object? members = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -95,10 +92,6 @@ class _$ClubCopyWithImpl<$Res, $Val extends Club>
           ? _value.trainingSessions
           : trainingSessions // ignore: cast_nullable_to_non_nullable
               as List<TrainingSession>?,
-      members: freezed == members
-          ? _value.members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
     ) as $Val);
   }
 }
@@ -115,8 +108,7 @@ abstract class _$$_ClubCopyWith<$Res> implements $ClubCopyWith<$Res> {
       String? logo,
       String? address,
       String adminId,
-      List<TrainingSession>? trainingSessions,
-      List<String>? members});
+      List<TrainingSession>? trainingSessions});
 }
 
 /// @nodoc
@@ -134,7 +126,6 @@ class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
     Object? address = freezed,
     Object? adminId = null,
     Object? trainingSessions = freezed,
-    Object? members = freezed,
   }) {
     return _then(_$_Club(
       id: null == id
@@ -161,10 +152,6 @@ class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
           ? _value._trainingSessions
           : trainingSessions // ignore: cast_nullable_to_non_nullable
               as List<TrainingSession>?,
-      members: freezed == members
-          ? _value._members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
     ));
   }
 }
@@ -179,10 +166,8 @@ class _$_Club implements _Club {
       this.logo,
       this.address,
       required this.adminId,
-      final List<TrainingSession>? trainingSessions,
-      final List<String>? members})
-      : _trainingSessions = trainingSessions,
-        _members = members;
+      final List<TrainingSession>? trainingSessions})
+      : _trainingSessions = trainingSessions;
 
   factory _$_Club.fromJson(Map<String, dynamic> json) => _$$_ClubFromJson(json);
 
@@ -207,19 +192,9 @@ class _$_Club implements _Club {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String>? _members;
-  @override
-  List<String>? get members {
-    final value = _members;
-    if (value == null) return null;
-    if (_members is EqualUnmodifiableListView) return _members;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   @override
   String toString() {
-    return 'Club(id: $id, name: $name, logo: $logo, address: $address, adminId: $adminId, trainingSessions: $trainingSessions, members: $members)';
+    return 'Club(id: $id, name: $name, logo: $logo, address: $address, adminId: $adminId, trainingSessions: $trainingSessions)';
   }
 
   @override
@@ -233,21 +208,13 @@ class _$_Club implements _Club {
             (identical(other.address, address) || other.address == address) &&
             (identical(other.adminId, adminId) || other.adminId == adminId) &&
             const DeepCollectionEquality()
-                .equals(other._trainingSessions, _trainingSessions) &&
-            const DeepCollectionEquality().equals(other._members, _members));
+                .equals(other._trainingSessions, _trainingSessions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      logo,
-      address,
-      adminId,
-      const DeepCollectionEquality().hash(_trainingSessions),
-      const DeepCollectionEquality().hash(_members));
+  int get hashCode => Object.hash(runtimeType, id, name, logo, address, adminId,
+      const DeepCollectionEquality().hash(_trainingSessions));
 
   @JsonKey(ignore: true)
   @override
@@ -270,8 +237,7 @@ abstract class _Club implements Club {
       final String? logo,
       final String? address,
       required final String adminId,
-      final List<TrainingSession>? trainingSessions,
-      final List<String>? members}) = _$_Club;
+      final List<TrainingSession>? trainingSessions}) = _$_Club;
 
   factory _Club.fromJson(Map<String, dynamic> json) = _$_Club.fromJson;
 
@@ -287,8 +253,6 @@ abstract class _Club implements Club {
   String get adminId;
   @override
   List<TrainingSession>? get trainingSessions;
-  @override
-  List<String>? get members;
   @override
   @JsonKey(ignore: true)
   _$$_ClubCopyWith<_$_Club> get copyWith => throw _privateConstructorUsedError;

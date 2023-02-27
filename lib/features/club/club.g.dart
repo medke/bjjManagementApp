@@ -15,8 +15,6 @@ _$_Club _$$_ClubFromJson(Map<String, dynamic> json) => _$_Club(
       trainingSessions: (json['trainingSessions'] as List<dynamic>?)
           ?.map((e) => TrainingSession.fromJson(e as Map<String, dynamic>))
           .toList(),
-      members:
-          (json['members'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$_ClubToJson(_$_Club instance) => <String, dynamic>{
@@ -27,5 +25,4 @@ Map<String, dynamic> _$$_ClubToJson(_$_Club instance) => <String, dynamic>{
       'adminId': instance.adminId,
       'trainingSessions':
           instance.trainingSessions?.map((e) => e.toJson()).toList(),
-      'members': instance.members,
     };

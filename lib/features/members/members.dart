@@ -1,14 +1,16 @@
 library members;
 
+import 'package:bjj_members_management/di/di.dart';
+import 'package:bjj_members_management/features/club/club.dart';
+import 'package:bjj_members_management/features/member/member.dart';
+import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:meta/meta.dart';
 
-part 'member_cubit.dart';
-part 'member_state.dart';
-part 'members.freezed.dart';
-part 'members.g.dart';
-part 'models/member.dart';
+part 'members_cubit.dart';
+
+part 'members_state.dart';

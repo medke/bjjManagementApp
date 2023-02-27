@@ -26,10 +26,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        InjectedBlocProvider<LoginCubit>(),
+        InjectedBlocProvider<MemberCubit>(),
         InjectedBlocProvider<ClassesCubit>(),
         InjectedBlocProvider<ClubCubit>(),
-        InjectedBlocProvider<MemberCubit>(),
+        InjectedBlocProvider<MembersCubit>(),
+        InjectedBlocProvider<MemberDetailsCubit>(),
       ],
       child: MaterialApp.router(
         title: 'BJJ Membership Management',

@@ -1,10 +1,10 @@
-part of login;
+part of member;
 
 @LazySingleton()
-class LoginCubit extends Cubit<LoginState> {
+class MemberCubit extends Cubit<MemberState> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  LoginCubit() : super(LoginInitial());
+  MemberCubit() : super(LoginInitial());
 
   Future<void> addUserToCollection(User user) async {
     final userRef = _firestore.collection('members').doc(user.uid);
@@ -13,6 +13,7 @@ class LoginCubit extends Cubit<LoginState> {
     if (!userDoc.exists) {
       await userRef.set({
         'email': user.email,
+        'id': user.uid
       });
     }
   }
@@ -31,6 +32,7 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
+
   Future<void> getUserFromCollection(String uid) async {
     final memberRef = _firestore.collection('members').doc(uid);
     final memberDoc = await memberRef.get();
@@ -44,6 +46,8 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> checkUserLoggedIn() async {
+    emit(MemberLoading());
+
     final user = FirebaseAuth.instance.currentUser;
     try {
       if (user != null) {
@@ -51,8 +55,11 @@ class LoginCubit extends Cubit<LoginState> {
       } else {
         emit(RedirectToLogin());
       }
-    } catch (e) {
+    } catch (e,s) {
+      print(">>>>> $e $s");
       emit(LoginFailure(error: e.toString()));
     }
   }
+
+
 }

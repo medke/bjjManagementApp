@@ -103,7 +103,7 @@ class _AdminSignupPageState extends State<AdminSignupPage> {
                         email: _fbKey.currentState?.value['email'],
                         password: _fbKey.currentState?.value['password'],
                       );
-                      _memberCubit.signup(member: member);
+                      //TODO signup a member
                       Navigator.of(context).pop();
                     }
                   },

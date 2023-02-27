@@ -10,7 +10,6 @@ class Club with _$Club {
     String? address,
     required String adminId,
     List<TrainingSession>? trainingSessions,
-    List<String>? members,
   }) = _Club;
 
   factory Club.fromJson(Map<String, dynamic> json) => _$ClubFromJson(json);

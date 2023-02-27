@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="medk.bjj.management.bjj_members_management">
-   <application
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
         android:label="bjj_members_management"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
@@ -31,4 +33,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+
 </manifest>

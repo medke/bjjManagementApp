@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of members;
+part of member;
 
 // **************************************************************************
 // FreezedGenerator
@@ -25,6 +25,7 @@ mixin _$Member {
   String? get clubId => throw _privateConstructorUsedError;
   bool? get isAdmin => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
+  String? get code => throw _privateConstructorUsedError;
   DateTime? get membershipStartDate => throw _privateConstructorUsedError;
   DateTime? get membershipEndDate => throw _privateConstructorUsedError;
   String? get membershipType => throw _privateConstructorUsedError;
@@ -33,6 +34,7 @@ mixin _$Member {
   DateTime? get lastPaymentDate => throw _privateConstructorUsedError;
   String? get ageGroup => throw _privateConstructorUsedError;
   DateTime? get phoneNumber => throw _privateConstructorUsedError;
+  String? get paymentMethod => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,6 +53,7 @@ abstract class $MemberCopyWith<$Res> {
       String? clubId,
       bool? isAdmin,
       String? password,
+      String? code,
       DateTime? membershipStartDate,
       DateTime? membershipEndDate,
       String? membershipType,
@@ -59,6 +62,7 @@ abstract class $MemberCopyWith<$Res> {
       DateTime? lastPaymentDate,
       String? ageGroup,
       DateTime? phoneNumber,
+      String? paymentMethod,
       String email});
 }
 
@@ -80,6 +84,7 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
     Object? clubId = freezed,
     Object? isAdmin = freezed,
     Object? password = freezed,
+    Object? code = freezed,
     Object? membershipStartDate = freezed,
     Object? membershipEndDate = freezed,
     Object? membershipType = freezed,
@@ -88,6 +93,7 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
     Object? lastPaymentDate = freezed,
     Object? ageGroup = freezed,
     Object? phoneNumber = freezed,
+    Object? paymentMethod = freezed,
     Object? email = null,
   }) {
     return _then(_value.copyWith(
@@ -111,6 +117,10 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
       membershipStartDate: freezed == membershipStartDate
           ? _value.membershipStartDate
           : membershipStartDate // ignore: cast_nullable_to_non_nullable
@@ -143,6 +153,10 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      paymentMethod: freezed == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as String?,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -163,6 +177,7 @@ abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
       String? clubId,
       bool? isAdmin,
       String? password,
+      String? code,
       DateTime? membershipStartDate,
       DateTime? membershipEndDate,
       String? membershipType,
@@ -171,6 +186,7 @@ abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
       DateTime? lastPaymentDate,
       String? ageGroup,
       DateTime? phoneNumber,
+      String? paymentMethod,
       String email});
 }
 
@@ -189,6 +205,7 @@ class __$$_MemberCopyWithImpl<$Res>
     Object? clubId = freezed,
     Object? isAdmin = freezed,
     Object? password = freezed,
+    Object? code = freezed,
     Object? membershipStartDate = freezed,
     Object? membershipEndDate = freezed,
     Object? membershipType = freezed,
@@ -197,6 +214,7 @@ class __$$_MemberCopyWithImpl<$Res>
     Object? lastPaymentDate = freezed,
     Object? ageGroup = freezed,
     Object? phoneNumber = freezed,
+    Object? paymentMethod = freezed,
     Object? email = null,
   }) {
     return _then(_$_Member(
@@ -220,6 +238,10 @@ class __$$_MemberCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
       membershipStartDate: freezed == membershipStartDate
           ? _value.membershipStartDate
           : membershipStartDate // ignore: cast_nullable_to_non_nullable
@@ -252,6 +274,10 @@ class __$$_MemberCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      paymentMethod: freezed == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as String?,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -269,6 +295,7 @@ class _$_Member implements _Member {
       this.clubId,
       this.isAdmin,
       this.password,
+      this.code,
       this.membershipStartDate,
       this.membershipEndDate,
       this.membershipType,
@@ -277,6 +304,7 @@ class _$_Member implements _Member {
       this.lastPaymentDate,
       this.ageGroup,
       this.phoneNumber,
+      this.paymentMethod,
       required this.email});
 
   factory _$_Member.fromJson(Map<String, dynamic> json) =>
@@ -292,6 +320,8 @@ class _$_Member implements _Member {
   final bool? isAdmin;
   @override
   final String? password;
+  @override
+  final String? code;
   @override
   final DateTime? membershipStartDate;
   @override
@@ -309,11 +339,13 @@ class _$_Member implements _Member {
   @override
   final DateTime? phoneNumber;
   @override
+  final String? paymentMethod;
+  @override
   final String email;
 
   @override
   String toString() {
-    return 'Member(id: $id, name: $name, clubId: $clubId, isAdmin: $isAdmin, password: $password, membershipStartDate: $membershipStartDate, membershipEndDate: $membershipEndDate, membershipType: $membershipType, bjjBelt: $bjjBelt, beltObtainedDate: $beltObtainedDate, lastPaymentDate: $lastPaymentDate, ageGroup: $ageGroup, phoneNumber: $phoneNumber, email: $email)';
+    return 'Member(id: $id, name: $name, clubId: $clubId, isAdmin: $isAdmin, password: $password, code: $code, membershipStartDate: $membershipStartDate, membershipEndDate: $membershipEndDate, membershipType: $membershipType, bjjBelt: $bjjBelt, beltObtainedDate: $beltObtainedDate, lastPaymentDate: $lastPaymentDate, ageGroup: $ageGroup, phoneNumber: $phoneNumber, paymentMethod: $paymentMethod, email: $email)';
   }
 
   @override
@@ -327,6 +359,7 @@ class _$_Member implements _Member {
             (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin) &&
             (identical(other.password, password) ||
                 other.password == password) &&
+            (identical(other.code, code) || other.code == code) &&
             (identical(other.membershipStartDate, membershipStartDate) ||
                 other.membershipStartDate == membershipStartDate) &&
             (identical(other.membershipEndDate, membershipEndDate) ||
@@ -342,6 +375,8 @@ class _$_Member implements _Member {
                 other.ageGroup == ageGroup) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod) &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -354,6 +389,7 @@ class _$_Member implements _Member {
       clubId,
       isAdmin,
       password,
+      code,
       membershipStartDate,
       membershipEndDate,
       membershipType,
@@ -362,6 +398,7 @@ class _$_Member implements _Member {
       lastPaymentDate,
       ageGroup,
       phoneNumber,
+      paymentMethod,
       email);
 
   @JsonKey(ignore: true)
@@ -385,6 +422,7 @@ abstract class _Member implements Member {
       final String? clubId,
       final bool? isAdmin,
       final String? password,
+      final String? code,
       final DateTime? membershipStartDate,
       final DateTime? membershipEndDate,
       final String? membershipType,
@@ -393,6 +431,7 @@ abstract class _Member implements Member {
       final DateTime? lastPaymentDate,
       final String? ageGroup,
       final DateTime? phoneNumber,
+      final String? paymentMethod,
       required final String email}) = _$_Member;
 
   factory _Member.fromJson(Map<String, dynamic> json) = _$_Member.fromJson;
@@ -407,6 +446,8 @@ abstract class _Member implements Member {
   bool? get isAdmin;
   @override
   String? get password;
+  @override
+  String? get code;
   @override
   DateTime? get membershipStartDate;
   @override
@@ -423,6 +464,8 @@ abstract class _Member implements Member {
   String? get ageGroup;
   @override
   DateTime? get phoneNumber;
+  @override
+  String? get paymentMethod;
   @override
   String get email;
   @override

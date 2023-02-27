@@ -12,7 +12,7 @@ class ClubCubit extends Cubit<ClubState> {
   }) async {
     try {
       await _firestore.collection('clubs').doc(club.id).set(club.toJson());
-      getIt<LoginCubit>().addMemberToClub(
+      getIt<MemberCubit>().addMemberToClub(
         member: admin,
         clubId: club.id,
         isAdmin: true,
@@ -23,7 +23,7 @@ class ClubCubit extends Cubit<ClubState> {
     }
   }
 
-  Future<void> updateClass(TrainingSession trainingSession) async {
+Future<void> updateClass(TrainingSession trainingSession) async {
     emit(const ClubLoading());
     try {} catch (e) {
       emit(ClubCreatedError(e.toString()));

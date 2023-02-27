@@ -10,6 +10,17 @@ class LoginPage extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return auth_ui.SignInScreen(
+            actions: [
+              AuthStateChangeAction<UserCreated>(
+                (context, state) {
+                  Future.delayed(const Duration(seconds: 2)).then(
+                    (value) {
+                      context.popAndGoNamed(Routes.roleSelection);
+                    },
+                  );
+                },
+              ),
+            ],
             headerBuilder: (context, constraints, _) => const Center(
               child: Text(
                 'Bjj Management App',
@@ -23,8 +34,8 @@ class LoginPage extends StatelessWidget {
             ],
           );
         }
-        LoginCubit().addUserToCollection(snapshot.data!);
-        return const HomePage();
+        MemberCubit().addUserToCollection(snapshot.data!);
+        return const SplashScreenPage();
       },
     );
   }

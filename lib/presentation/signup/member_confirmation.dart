@@ -33,19 +33,19 @@ class MemberConfirmation extends StatelessWidget {
                   child: const Text('Save'),
                   onPressed: () {
                     if (_fbKey.currentState!.saveAndValidate()) {
-                      getIt<MemberCubit>().confirm(inviteCode: _fbKey.currentState?.value['invitation_code']).then(
-                        (value) {
-                          if (value) {
-                            context.goNamed(Routes.home);
-                          } else {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text("Error: Invitation Code is Wrong"),
-                              ),
-                            );
-                          }
-                        },
-                      );
+                      // getIt<MemberCubit>().confirm(inviteCode: _fbKey.currentState?.value['invitation_code']).then(
+                      //   (value) {
+                      //     if (value) {
+                      //       context.goNamed(Routes.home);
+                      //     } else {
+                      //       ScaffoldMessenger.of(context).showSnackBar(
+                      //         const SnackBar(
+                      //           content: Text("Error: Invitation Code is Wrong"),
+                      //         ),
+                      //       );
+                      //     }
+                      //   },
+                      // );
                     }
                   },
                 ),

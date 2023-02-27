@@ -6,6 +6,7 @@ class MemberMapper extends Mapper<Map<String, dynamic>, Member> {
 
   @override
   Member fromEntity(Map<String, dynamic> entity) {
+    print(" ...fff.. ${entity}");
     return Member(
       id: entity['id'],
       email: entity['email'],
@@ -21,6 +22,7 @@ class MemberMapper extends Mapper<Map<String, dynamic>, Member> {
       lastPaymentDate: entity['lastPaymentDate'],
       ageGroup: entity['ageGroup'],
       phoneNumber: entity['phoneNumber'],
+      paymentMethod: entity['paymentMethod']
     );
   }
 

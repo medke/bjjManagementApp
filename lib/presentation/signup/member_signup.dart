@@ -103,7 +103,7 @@ class _MemberSignupPageState extends State<MemberSignupPage> {
                         email: _fbKey.currentState?.value['email'],
                         password: _fbKey.currentState?.value['password'],
                       );
-                      _memberCubit.signup(member: member);
+                      // _memberCubit.signup(member: member);
                       Navigator.of(context).pop();
                     }
                   },
