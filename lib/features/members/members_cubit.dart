@@ -11,7 +11,7 @@ class MembersCubit extends Cubit<MembersState> {
       _firestore
           .collection('members')
           .where('clubId', isEqualTo: getIt<MemberCubit>().state.member!.clubId)
-          .where('isAdmin', isNotEqualTo: true)
+          // .where('isAdmin', isNotEqualTo: true)
           .snapshots()
           .listen((snapshot) {
         final members = snapshot.docs.map((doc) => Member.fromJson(doc.data())).toList();

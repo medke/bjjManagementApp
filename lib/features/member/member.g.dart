@@ -28,9 +28,7 @@ _$_Member _$$_MemberFromJson(Map<String, dynamic> json) => _$_Member(
           ? null
           : DateTime.parse(json['lastPaymentDate'] as String),
       ageGroup: json['ageGroup'] as String?,
-      phoneNumber: json['phoneNumber'] == null
-          ? null
-          : DateTime.parse(json['phoneNumber'] as String),
+      phoneNumber: json['phoneNumber'] as String?,
       paymentMethod: json['paymentMethod'] as String?,
       email: json['email'] as String,
     );
@@ -49,7 +47,7 @@ Map<String, dynamic> _$$_MemberToJson(_$_Member instance) => <String, dynamic>{
       'beltObtainedDate': instance.beltObtainedDate?.toIso8601String(),
       'lastPaymentDate': instance.lastPaymentDate?.toIso8601String(),
       'ageGroup': instance.ageGroup,
-      'phoneNumber': instance.phoneNumber?.toIso8601String(),
+      'phoneNumber': instance.phoneNumber,
       'paymentMethod': instance.paymentMethod,
       'email': instance.email,
     };

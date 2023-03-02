@@ -1,4 +1,4 @@
-enum paymentMethod {
+enum PaymentMethod {
   monthly,
   quarterly,
   halfYear,

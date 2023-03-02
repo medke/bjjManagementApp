@@ -15,6 +15,12 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await Firebase.initializeApp(
+    name: "member_cubit",
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   setupDependencies(Environment.dev);
   runApp(const MyApp());
 }

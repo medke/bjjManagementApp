@@ -33,7 +33,7 @@ mixin _$Member {
   DateTime? get beltObtainedDate => throw _privateConstructorUsedError;
   DateTime? get lastPaymentDate => throw _privateConstructorUsedError;
   String? get ageGroup => throw _privateConstructorUsedError;
-  DateTime? get phoneNumber => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
   String? get paymentMethod => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
 
@@ -61,7 +61,7 @@ abstract class $MemberCopyWith<$Res> {
       DateTime? beltObtainedDate,
       DateTime? lastPaymentDate,
       String? ageGroup,
-      DateTime? phoneNumber,
+      String? phoneNumber,
       String? paymentMethod,
       String email});
 }
@@ -152,7 +152,7 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
@@ -185,7 +185,7 @@ abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
       DateTime? beltObtainedDate,
       DateTime? lastPaymentDate,
       String? ageGroup,
-      DateTime? phoneNumber,
+      String? phoneNumber,
       String? paymentMethod,
       String email});
 }
@@ -273,7 +273,7 @@ class __$$_MemberCopyWithImpl<$Res>
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       paymentMethod: freezed == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
@@ -337,7 +337,7 @@ class _$_Member implements _Member {
   @override
   final String? ageGroup;
   @override
-  final DateTime? phoneNumber;
+  final String? phoneNumber;
   @override
   final String? paymentMethod;
   @override
@@ -430,7 +430,7 @@ abstract class _Member implements Member {
       final DateTime? beltObtainedDate,
       final DateTime? lastPaymentDate,
       final String? ageGroup,
-      final DateTime? phoneNumber,
+      final String? phoneNumber,
       final String? paymentMethod,
       required final String email}) = _$_Member;
 
@@ -463,7 +463,7 @@ abstract class _Member implements Member {
   @override
   String? get ageGroup;
   @override
-  DateTime? get phoneNumber;
+  String? get phoneNumber;
   @override
   String? get paymentMethod;
   @override

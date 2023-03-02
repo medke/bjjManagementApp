@@ -6,7 +6,6 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final member = getIt<MemberCubit>().state.member;
-    print(">>>> member2 $member");
     return const Scaffold(
       body: SafeArea(
         child: Center(

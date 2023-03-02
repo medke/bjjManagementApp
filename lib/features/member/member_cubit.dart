@@ -11,10 +11,7 @@ class MemberCubit extends Cubit<MemberState> {
     final userDoc = await userRef.get();
 
     if (!userDoc.exists) {
-      await userRef.set({
-        'email': user.email,
-        'id': user.uid
-      });
+      await userRef.set({'email': user.email, 'id': user.uid});
     }
   }
 
@@ -28,10 +25,9 @@ class MemberCubit extends Cubit<MemberState> {
       await _firestore.collection('members').doc(member.id).update(member.toJson());
       emit(MemberUpdate.fromState(member: member));
     } catch (e) {
-      print(">>>> ADD MEMBER FAILURE: $e");
+
     }
   }
-
 
   Future<void> getUserFromCollection(String uid) async {
     final memberRef = _firestore.collection('members').doc(uid);
@@ -55,11 +51,20 @@ class MemberCubit extends Cubit<MemberState> {
       } else {
         emit(RedirectToLogin());
       }
-    } catch (e,s) {
-      print(">>>>> $e $s");
+    } catch (e) {
       emit(LoginFailure(error: e.toString()));
     }
   }
 
+  Future<void> logout() async {
+    emit(MemberLoading());
 
+    final auth = FirebaseAuth.instance;
+    try {
+      await auth.signOut();
+      emit(RedirectToLogin());
+    } catch (e, s) {
+      emit(LoginFailure(error: e.toString()));
+    }
+  }
 }

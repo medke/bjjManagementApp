@@ -8,7 +8,6 @@ class RoleSelectionPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Choose User Type'),
-
       ),
       body: SafeArea(
         child: Padding(
@@ -32,11 +31,20 @@ class RoleSelectionPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       context.goNamed(Routes.membersComplete);
-
                     },
                     child: const Text('Member'),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  getIt<MemberCubit>().logout();
+                  context.goNamed(Routes.login);
+                },
+                child: const Text('Or go back to login'),
               ),
               const SizedBox(height: 20.0),
             ],

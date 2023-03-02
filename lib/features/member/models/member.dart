@@ -16,7 +16,7 @@ class Member with _$Member {
     DateTime? beltObtainedDate,
     DateTime? lastPaymentDate,
     String? ageGroup,
-    DateTime? phoneNumber,
+    String? phoneNumber,
     String? paymentMethod,
     required String email,
   }) = _Member;

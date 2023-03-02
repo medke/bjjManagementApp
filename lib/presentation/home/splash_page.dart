@@ -17,7 +17,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   }
 
   void navigateToNextScreen(BuildContext context, Member? member) {
-    print(">>>> here3");
     if (member != null) {
       if (member.isAdmin == null) {
         context.goNamed(Routes.roleSelection);
@@ -41,7 +40,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         child: BlocConsumer<MemberCubit, MemberState>(
           bloc: getIt(),
           listener: (context, state) {
-            print(">>>> listener");
 
             if (state is LoginFailure) {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -60,8 +58,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             }
           },
           builder: (context, state) {
-            print(">>>> built ${state.runtimeType}");
-
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

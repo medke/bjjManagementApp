@@ -58,7 +58,6 @@ class ClubCreatePage extends StatelessWidget {
                           final address = _fbKey.currentState?.fields['address']?.value as String;
                           final logo = _fbKey.currentState?.fields['logoUrl']?.value as String?;
                           final Member admin = getIt<MemberCubit>().state.member!;
-                          print("<<<<>>>> $admin");
                           final Club club = Club(
                             id: const Uuid().v4(),
                             name: name,

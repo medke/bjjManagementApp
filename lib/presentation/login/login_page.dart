@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
                 (context, state) {
                   Future.delayed(const Duration(seconds: 2)).then(
                     (value) {
-                      context.popAndGoNamed(Routes.roleSelection);
+                      context.goNamed(Routes.roleSelection);
                     },
                   );
                 },

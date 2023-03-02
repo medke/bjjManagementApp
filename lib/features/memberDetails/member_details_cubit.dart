@@ -5,8 +5,6 @@ class MemberDetailsCubit extends Cubit<MembersDetailsState> {
   MemberDetailsCubit() : super(MemberDetailsInitial());
 
   Future<void> addMember(Member member) async {
-    final FirebaseAuth auth = FirebaseAuth.instance;
-
     final memberRef = FirebaseFirestore.instance.collection('members');
 
     try {
@@ -14,29 +12,20 @@ class MemberDetailsCubit extends Cubit<MembersDetailsState> {
       if (querySnapshot.docs.isNotEmpty) {
         throw ('Email already exists');
       }
-      auth
-          .createUserWithEmailAndPassword(
-        email: member.email,
-        password: member.password!,
-      )
-          .then((result) {
-        User user = result.user!;
-        AdditionalUserInfo additionalUserInfo = AdditionalUserInfo(
-          profile: {'member': member.toJson()},
-          isNewUser: true,
-        );
-        FirebaseFirestore.instance
-            .collection('members')
-            .doc(user.uid)
-            .set({'member': member.toJson()})
-            .then((value) => print("User added"))
-            .catchError((error) => print("Failed to add user: $error"));
-        user.sendEmailVerification();
-      }).catchError((error) {
-        throw (error);
-      });
 
-      emit(const MemberAddingSuccess(message: "Member Added Succesffuly"));
+      // Create a new instance of the FirebaseAuth class
+      final FirebaseAuth auth = FirebaseAuth.instanceFor(app: Firebase.app("member_cubit"));
+
+      // Create a new user account with the specified email and password
+     await auth.createUserWithEmailAndPassword(email: member.email, password: member.password!);
+
+      // Save the member data to Firestore
+      await FirebaseFirestore.instance
+          .collection('members')
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .set(member.toJson());
+
+      emit(const MemberAddingSuccess(message: "Member Added Successfully"));
     } catch (e) {
       emit(MemberAddingFailure(message: e.toString()));
     }
