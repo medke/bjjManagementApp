@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of club;
+part of 'club.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -97,9 +97,10 @@ class _$ClubCopyWithImpl<$Res, $Val extends Club>
 }
 
 /// @nodoc
-abstract class _$$_ClubCopyWith<$Res> implements $ClubCopyWith<$Res> {
-  factory _$$_ClubCopyWith(_$_Club value, $Res Function(_$_Club) then) =
-      __$$_ClubCopyWithImpl<$Res>;
+abstract class _$$ClubImplCopyWith<$Res> implements $ClubCopyWith<$Res> {
+  factory _$$ClubImplCopyWith(
+          _$ClubImpl value, $Res Function(_$ClubImpl) then) =
+      __$$ClubImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,9 +113,10 @@ abstract class _$$_ClubCopyWith<$Res> implements $ClubCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
-    implements _$$_ClubCopyWith<$Res> {
-  __$$_ClubCopyWithImpl(_$_Club _value, $Res Function(_$_Club) _then)
+class __$$ClubImplCopyWithImpl<$Res>
+    extends _$ClubCopyWithImpl<$Res, _$ClubImpl>
+    implements _$$ClubImplCopyWith<$Res> {
+  __$$ClubImplCopyWithImpl(_$ClubImpl _value, $Res Function(_$ClubImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,7 +129,7 @@ class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
     Object? adminId = null,
     Object? trainingSessions = freezed,
   }) {
-    return _then(_$_Club(
+    return _then(_$ClubImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -159,8 +161,8 @@ class __$$_ClubCopyWithImpl<$Res> extends _$ClubCopyWithImpl<$Res, _$_Club>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_Club implements _Club {
-  const _$_Club(
+class _$ClubImpl implements _Club {
+  const _$ClubImpl(
       {required this.id,
       required this.name,
       this.logo,
@@ -169,7 +171,8 @@ class _$_Club implements _Club {
       final List<TrainingSession>? trainingSessions})
       : _trainingSessions = trainingSessions;
 
-  factory _$_Club.fromJson(Map<String, dynamic> json) => _$$_ClubFromJson(json);
+  factory _$ClubImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClubImplFromJson(json);
 
   @override
   final String id;
@@ -201,7 +204,7 @@ class _$_Club implements _Club {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Club &&
+            other is _$ClubImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.logo, logo) || other.logo == logo) &&
@@ -219,12 +222,12 @@ class _$_Club implements _Club {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClubCopyWith<_$_Club> get copyWith =>
-      __$$_ClubCopyWithImpl<_$_Club>(this, _$identity);
+  _$$ClubImplCopyWith<_$ClubImpl> get copyWith =>
+      __$$ClubImplCopyWithImpl<_$ClubImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClubToJson(
+    return _$$ClubImplToJson(
       this,
     );
   }
@@ -237,9 +240,9 @@ abstract class _Club implements Club {
       final String? logo,
       final String? address,
       required final String adminId,
-      final List<TrainingSession>? trainingSessions}) = _$_Club;
+      final List<TrainingSession>? trainingSessions}) = _$ClubImpl;
 
-  factory _Club.fromJson(Map<String, dynamic> json) = _$_Club.fromJson;
+  factory _Club.fromJson(Map<String, dynamic> json) = _$ClubImpl.fromJson;
 
   @override
   String get id;
@@ -255,5 +258,6 @@ abstract class _Club implements Club {
   List<TrainingSession>? get trainingSessions;
   @override
   @JsonKey(ignore: true)
-  _$$_ClubCopyWith<_$_Club> get copyWith => throw _privateConstructorUsedError;
+  _$$ClubImplCopyWith<_$ClubImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

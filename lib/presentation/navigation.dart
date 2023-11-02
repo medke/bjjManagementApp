@@ -28,6 +28,8 @@ class Routes {
   static const String adminsComplete = 'admin-complete';
   static const String membersComplete = 'members-complete';
 
+  static const String addSessionPage = 'session-add';
+
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -77,7 +79,18 @@ class Routes {
           GoRoute(
             name: Routes.memberDetails,
             path: Routes.memberDetails,
-            pageBuilder: (context, state) => MaterialPage(key: state.pageKey, child: const MemberDetailsPage()),
+            pageBuilder: (context, state) {
+              final extra = state.extra as MemberDetailsExtra?;
+              return MaterialPage(key: state.pageKey, child: MemberDetailsPage(member: extra?.member));
+            },
+          ),
+          GoRoute(
+            name: Routes.addSessionPage,
+            path: Routes.addSessionPage,
+            pageBuilder: (context, state) {
+              final index = state.extra as int?;
+              return MaterialPage(key: state.pageKey, child: SessionAddPage(index: index!));
+            },
           ),
           GoRoute(
             name: Routes.profile,
@@ -98,4 +111,10 @@ extension GoRouterExtension on BuildContext {
     Navigator.pop(this);
     goNamed(route);
   }
+}
+
+class MemberDetailsExtra {
+  const MemberDetailsExtra({required this.member});
+
+  final Member member;
 }

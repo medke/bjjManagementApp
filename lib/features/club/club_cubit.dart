@@ -12,7 +12,7 @@ class ClubCubit extends Cubit<ClubState> {
   }) async {
     try {
       await _firestore.collection('clubs').doc(club.id).set(club.toJson());
-      getIt<MemberCubit>().addMemberToClub(
+      await getIt<MemberCubit>().addMemberToClub(
         member: admin,
         clubId: club.id,
         isAdmin: true,

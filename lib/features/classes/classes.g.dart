@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of classes;
+part of 'classes.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TrainingSession _$$_TrainingSessionFromJson(Map<String, dynamic> json) =>
-    _$_TrainingSession(
+_$TrainingSessionImpl _$$TrainingSessionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TrainingSessionImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       startTime: json['startTime'] as String,
@@ -16,7 +17,8 @@ _$_TrainingSession _$$_TrainingSessionFromJson(Map<String, dynamic> json) =>
       ageGroup: json['ageGroup'] as String,
     );
 
-Map<String, dynamic> _$$_TrainingSessionToJson(_$_TrainingSession instance) =>
+Map<String, dynamic> _$$TrainingSessionImplToJson(
+        _$TrainingSessionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

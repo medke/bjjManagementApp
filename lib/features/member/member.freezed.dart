@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of member;
+part of 'member.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -166,9 +166,10 @@ class _$MemberCopyWithImpl<$Res, $Val extends Member>
 }
 
 /// @nodoc
-abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
-  factory _$$_MemberCopyWith(_$_Member value, $Res Function(_$_Member) then) =
-      __$$_MemberCopyWithImpl<$Res>;
+abstract class _$$MemberImplCopyWith<$Res> implements $MemberCopyWith<$Res> {
+  factory _$$MemberImplCopyWith(
+          _$MemberImpl value, $Res Function(_$MemberImpl) then) =
+      __$$MemberImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -191,10 +192,11 @@ abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MemberCopyWithImpl<$Res>
-    extends _$MemberCopyWithImpl<$Res, _$_Member>
-    implements _$$_MemberCopyWith<$Res> {
-  __$$_MemberCopyWithImpl(_$_Member _value, $Res Function(_$_Member) _then)
+class __$$MemberImplCopyWithImpl<$Res>
+    extends _$MemberCopyWithImpl<$Res, _$MemberImpl>
+    implements _$$MemberImplCopyWith<$Res> {
+  __$$MemberImplCopyWithImpl(
+      _$MemberImpl _value, $Res Function(_$MemberImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -217,7 +219,7 @@ class __$$_MemberCopyWithImpl<$Res>
     Object? paymentMethod = freezed,
     Object? email = null,
   }) {
-    return _then(_$_Member(
+    return _then(_$MemberImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -288,8 +290,8 @@ class __$$_MemberCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Member implements _Member {
-  const _$_Member(
+class _$MemberImpl implements _Member {
+  const _$MemberImpl(
       {this.id,
       this.name,
       this.clubId,
@@ -307,8 +309,8 @@ class _$_Member implements _Member {
       this.paymentMethod,
       required this.email});
 
-  factory _$_Member.fromJson(Map<String, dynamic> json) =>
-      _$$_MemberFromJson(json);
+  factory _$MemberImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MemberImplFromJson(json);
 
   @override
   final String? id;
@@ -352,7 +354,7 @@ class _$_Member implements _Member {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Member &&
+            other is _$MemberImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.clubId, clubId) || other.clubId == clubId) &&
@@ -404,12 +406,12 @@ class _$_Member implements _Member {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MemberCopyWith<_$_Member> get copyWith =>
-      __$$_MemberCopyWithImpl<_$_Member>(this, _$identity);
+  _$$MemberImplCopyWith<_$MemberImpl> get copyWith =>
+      __$$MemberImplCopyWithImpl<_$MemberImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MemberToJson(
+    return _$$MemberImplToJson(
       this,
     );
   }
@@ -432,9 +434,9 @@ abstract class _Member implements Member {
       final String? ageGroup,
       final String? phoneNumber,
       final String? paymentMethod,
-      required final String email}) = _$_Member;
+      required final String email}) = _$MemberImpl;
 
-  factory _Member.fromJson(Map<String, dynamic> json) = _$_Member.fromJson;
+  factory _Member.fromJson(Map<String, dynamic> json) = _$MemberImpl.fromJson;
 
   @override
   String? get id;
@@ -470,6 +472,6 @@ abstract class _Member implements Member {
   String get email;
   @override
   @JsonKey(ignore: true)
-  _$$_MemberCopyWith<_$_Member> get copyWith =>
+  _$$MemberImplCopyWith<_$MemberImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

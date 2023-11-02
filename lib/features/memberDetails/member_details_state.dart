@@ -10,7 +10,9 @@ class MembersDetailsState extends Equatable {
   @override
   List<Object?> get props => [message];
 }
-class MemberDetailsInitial extends MembersDetailsState {}
+class MemberDetailsInitial extends MembersDetailsState {
+  const MemberDetailsInitial();
+}
 
 class MemberAddingFailure extends MembersDetailsState {
   const MemberAddingFailure({required String message}) : super(message: message);

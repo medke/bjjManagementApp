@@ -1,6 +1,7 @@
 library home_page;
 
 import 'package:bjj_members_management/di/di.dart';
+import 'package:bjj_members_management/enums/sort_members.dart';
 import 'package:bjj_members_management/features/features.dart';
 import 'package:bjj_members_management/presentation/presentation.dart';
 import 'package:firebase_auth/firebase_auth.dart';

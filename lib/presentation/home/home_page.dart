@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  bool _isSearching = false;
+  final TextEditingController _searchController = TextEditingController();
 
   static const List<Widget> _widgetOptions = <Widget>[
     DashboardPage(),
@@ -23,12 +25,67 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // if the user is on MembersPage, show a search icon, that when clicked, shows a search bar on the app bar
+  // also add an icon to sort the members by name or by belt color, last payment date, or alphabetically
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My App'),
+        title: _isSearching
+            ? TextField(
+                controller: _searchController,
+                onChanged: (text) {
+                  getIt<MembersCubit>().searchMembers(text);
+                },
+                decoration: const InputDecoration(
+                  hintText: 'Search members...',
+                ),
+              )
+            : const Text('My App'),
         actions: <Widget>[
+          if (_selectedIndex == 1) ...[
+            if (_isSearching) ...[
+              IconButton(
+                icon: const Icon(Icons.close),
+                onPressed: () {
+                  setState(() {
+                    _isSearching = false;
+                    _searchController.clear();
+                  });
+                },
+              ),
+            ] else ...[
+              IconButton(
+                icon: const Icon(Icons.search),
+                onPressed: () {
+                  setState(() {
+                    _isSearching = true;
+                  });
+                },
+              ),
+              PopupMenuButton<SortOption>(
+                icon: const Icon(Icons.sort),
+                onSelected: (SortOption result) {
+                  getIt<MembersCubit>().sortMembers(result);
+                },
+                itemBuilder: (BuildContext context) => <PopupMenuEntry<SortOption>>[
+                  const PopupMenuItem<SortOption>(
+                    value: SortOption.name,
+                    child: Text('Sort by Name'),
+                  ),
+                  const PopupMenuItem<SortOption>(
+                    value: SortOption.beltColor,
+                    child: Text('Sort by Belt Color'),
+                  ),
+                  const PopupMenuItem<SortOption>(
+                    value: SortOption.lastPaymentDate,
+                    child: Text('Last Payment Date'),
+                  ),
+                ],
+              ),
+            ]
+          ],
           IconButton(
             icon: const Icon(Icons.person),
             onPressed: () {

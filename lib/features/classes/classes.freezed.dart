@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of classes;
+part of 'classes.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -98,11 +98,11 @@ class _$TrainingSessionCopyWithImpl<$Res, $Val extends TrainingSession>
 }
 
 /// @nodoc
-abstract class _$$_TrainingSessionCopyWith<$Res>
+abstract class _$$TrainingSessionImplCopyWith<$Res>
     implements $TrainingSessionCopyWith<$Res> {
-  factory _$$_TrainingSessionCopyWith(
-          _$_TrainingSession value, $Res Function(_$_TrainingSession) then) =
-      __$$_TrainingSessionCopyWithImpl<$Res>;
+  factory _$$TrainingSessionImplCopyWith(_$TrainingSessionImpl value,
+          $Res Function(_$TrainingSessionImpl) then) =
+      __$$TrainingSessionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +115,11 @@ abstract class _$$_TrainingSessionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TrainingSessionCopyWithImpl<$Res>
-    extends _$TrainingSessionCopyWithImpl<$Res, _$_TrainingSession>
-    implements _$$_TrainingSessionCopyWith<$Res> {
-  __$$_TrainingSessionCopyWithImpl(
-      _$_TrainingSession _value, $Res Function(_$_TrainingSession) _then)
+class __$$TrainingSessionImplCopyWithImpl<$Res>
+    extends _$TrainingSessionCopyWithImpl<$Res, _$TrainingSessionImpl>
+    implements _$$TrainingSessionImplCopyWith<$Res> {
+  __$$TrainingSessionImplCopyWithImpl(
+      _$TrainingSessionImpl _value, $Res Function(_$TrainingSessionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +132,7 @@ class __$$_TrainingSessionCopyWithImpl<$Res>
     Object? day = null,
     Object? ageGroup = null,
   }) {
-    return _then(_$_TrainingSession(
+    return _then(_$TrainingSessionImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$_TrainingSessionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TrainingSession implements _TrainingSession {
-  const _$_TrainingSession(
+class _$TrainingSessionImpl implements _TrainingSession {
+  const _$TrainingSessionImpl(
       {required this.id,
       required this.name,
       required this.startTime,
@@ -172,8 +172,8 @@ class _$_TrainingSession implements _TrainingSession {
       required this.day,
       required this.ageGroup});
 
-  factory _$_TrainingSession.fromJson(Map<String, dynamic> json) =>
-      _$$_TrainingSessionFromJson(json);
+  factory _$TrainingSessionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TrainingSessionImplFromJson(json);
 
   @override
   final String id;
@@ -197,7 +197,7 @@ class _$_TrainingSession implements _TrainingSession {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TrainingSession &&
+            other is _$TrainingSessionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.startTime, startTime) ||
@@ -216,12 +216,13 @@ class _$_TrainingSession implements _TrainingSession {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TrainingSessionCopyWith<_$_TrainingSession> get copyWith =>
-      __$$_TrainingSessionCopyWithImpl<_$_TrainingSession>(this, _$identity);
+  _$$TrainingSessionImplCopyWith<_$TrainingSessionImpl> get copyWith =>
+      __$$TrainingSessionImplCopyWithImpl<_$TrainingSessionImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TrainingSessionToJson(
+    return _$$TrainingSessionImplToJson(
       this,
     );
   }
@@ -234,10 +235,10 @@ abstract class _TrainingSession implements TrainingSession {
       required final String startTime,
       required final String endTime,
       required final String day,
-      required final String ageGroup}) = _$_TrainingSession;
+      required final String ageGroup}) = _$TrainingSessionImpl;
 
   factory _TrainingSession.fromJson(Map<String, dynamic> json) =
-      _$_TrainingSession.fromJson;
+      _$TrainingSessionImpl.fromJson;
 
   @override
   String get id;
@@ -253,6 +254,6 @@ abstract class _TrainingSession implements TrainingSession {
   String get ageGroup;
   @override
   @JsonKey(ignore: true)
-  _$$_TrainingSessionCopyWith<_$_TrainingSession> get copyWith =>
+  _$$TrainingSessionImplCopyWith<_$TrainingSessionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
 part of member;
 
+
 @freezed
 class Member with _$Member {
   const factory Member({
@@ -22,4 +23,8 @@ class Member with _$Member {
   }) = _Member;
 
   factory Member.fromJson(Map<String, dynamic> json) => _$MemberFromJson(json);
+}
+
+extension Member$ on Member {
+  toJsonWithoutPassword() => toJson()..remove('password');
 }

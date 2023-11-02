@@ -10,8 +10,7 @@ class ProfilePage extends StatelessWidget {
         automaticallyImplyLeading: true,
         title: const Text('Profile'),
       ),
-      children: const [
-        MemberDetailsPage(),
+      children:  [
       ],
     );
   }

@@ -2,6 +2,8 @@ import 'package:bjj_members_management/di/di.dart';
 import 'package:bjj_members_management/di/injected_bloc_provider.dart';
 import 'package:bjj_members_management/features/classes/classes_cubit.dart';
 import 'package:bjj_members_management/features/features.dart';
+import 'package:bjj_members_management/features/session/session.dart';
+import 'package:bjj_members_management/features/sessions/sessions.dart';
 import 'package:bjj_members_management/firebase_options.dart';
 import 'package:bjj_members_management/presentation/presentation.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -37,6 +39,8 @@ class MyApp extends StatelessWidget {
         InjectedBlocProvider<ClubCubit>(),
         InjectedBlocProvider<MembersCubit>(),
         InjectedBlocProvider<MemberDetailsCubit>(),
+        InjectedBlocProvider<SessionsCubit>(),
+        InjectedBlocProvider<SessionCubit>(),
       ],
       child: MaterialApp.router(
         title: 'BJJ Membership Management',

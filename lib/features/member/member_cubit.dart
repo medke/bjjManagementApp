@@ -21,11 +21,12 @@ class MemberCubit extends Cubit<MemberState> {
     bool isAdmin = false,
   }) async {
     try {
-      member = member.copyWith(clubId: clubId, isAdmin: isAdmin);
-      await _firestore.collection('members').doc(member.id).update(member.toJson());
+      member = member.copyWith(clubId: clubId, isAdmin: isAdmin, name: "NameFromFlutter");
+      await _firestore.collection('members').doc(member.id).set(member.toJson());
+
       emit(MemberUpdate.fromState(member: member));
     } catch (e) {
-
+      emit(LoginFailure(error: e.toString()));
     }
   }
 

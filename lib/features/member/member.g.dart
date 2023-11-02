@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of member;
+part of 'member.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Member _$$_MemberFromJson(Map<String, dynamic> json) => _$_Member(
+_$MemberImpl _$$MemberImplFromJson(Map<String, dynamic> json) => _$MemberImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       clubId: json['clubId'] as String?,
@@ -33,7 +33,8 @@ _$_Member _$$_MemberFromJson(Map<String, dynamic> json) => _$_Member(
       email: json['email'] as String,
     );
 
-Map<String, dynamic> _$$_MemberToJson(_$_Member instance) => <String, dynamic>{
+Map<String, dynamic> _$$MemberImplToJson(_$MemberImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'clubId': instance.clubId,

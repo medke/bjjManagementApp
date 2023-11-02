@@ -16,6 +16,7 @@ class MembersInitial extends MembersState {
 
 class MembersLoaded extends MembersState {
   const MembersLoaded.fromState({required List<Member> members}) : super(members: members);
+  const MembersLoaded(List<Member> members) : super(members: members);
 }
 
 class MembersLoadingFailure extends MembersState {

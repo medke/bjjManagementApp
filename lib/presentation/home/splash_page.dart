@@ -64,19 +64,9 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 children: [
                   SvgPicture.asset(
                     'assets/images/logo.svg',
-                    height: 150,
-                    width: 150,
+                    height: 200,
                   ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'BJJ Management App',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
+
                   const Text(
                     'Version 1.0',
                     style: TextStyle(
